@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For You</title>
+<title>For You ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins',Arial,sans-serif;
+    font-family:Arial, sans-serif;
 }
 
 body{
@@ -25,6 +27,7 @@ body{
 }
 
 .container{
+
     width:90%;
     max-width:500px;
     text-align:center;
@@ -33,31 +36,45 @@ body{
     background:rgba(255,255,255,.08);
     backdrop-filter:blur(15px);
     box-shadow:0 0 40px rgba(255,0,100,.4);
+
 }
 
 .heart{
+
     font-size:110px;
     animation:heart 1.3s infinite;
+
 }
 
+
 @keyframes heart{
+
     50%{
         transform:scale(1.18);
     }
+
 }
 
+
 h1{
+
     font-size:65px;
     margin:20px 0;
     text-shadow:0 0 25px #ff9abb;
+
 }
+
 
 .text{
-    font-size:22px;
-    line-height:1.7;
+
+    font-size:24px;
+    line-height:1.8;
+
 }
 
+
 button{
+
     margin-top:30px;
     padding:15px 40px;
     border:0;
@@ -67,90 +84,169 @@ button{
     font-size:20px;
     cursor:pointer;
     box-shadow:0 0 25px #ff2f68;
+
 }
+
 
 button:hover{
+
     transform:scale(1.1);
+
 }
+
 
 .particle{
+
     position:absolute;
     animation:move 6s linear forwards;
-    font-size:30px;
+
 }
 
+
 @keyframes move{
+
     from{
+
         transform:translateY(100vh) rotate(0);
         opacity:1;
+
     }
+
+
     to{
+
         transform:translateY(-120vh) rotate(360deg);
         opacity:0;
+
     }
+
 }
+
+.loveText{
+
+    font-size:45px;
+    font-weight:bold;
+    text-shadow:0 0 25px #ff9abb;
+
+}
+
 
 </style>
 
 </head>
 
+
 <body>
+
 
 <div class="container">
 
+
 <div class="heart">❤️</div>
+
 
 <h1>For You ❤️</h1>
 
+
 <div class="text">
-I tried to keep this feeling to myself...<br>
-but I couldn't anymore.<br>
-The truth is... I like you. ❤️
-</div>
 
-<button onclick="love()">Open My Heart 💖</button>
+في شغلة من زمان نفسي أحكيلك عنها...<br>
+حاولت أخليها بقلبي بس ما قدرت.<br>
+بكل بساطة... أنا معجب فيك ❤️
 
 </div>
+
+
+<button onclick="love()">افتح قلبي 💖</button>
+
+
+</div>
+
 
 
 <script>
 
+
 function love(){
+
 
 for(let i=0;i<80;i++){
 
+
 let p=document.createElement("div");
+
 
 p.className="particle";
 
+
 let items=[
+
 "❤️",
 "💖",
 "💕",
-"✨",
-"I Love You ❤️"
+"✨"
+
 ];
+
 
 p.innerHTML=items[Math.floor(Math.random()*items.length)];
 
+
 p.style.left=Math.random()*100+"vw";
+
 
 p.style.fontSize=(20+Math.random()*35)+"px";
 
+
 p.style.animationDuration=(3+Math.random()*5)+"s";
+
 
 document.body.appendChild(p);
 
 
 setTimeout(()=>{
+
 p.remove();
+
 },7000);
 
-}
 
 }
+
+
+// إظهار I LOVE YOU
+
+let love=document.createElement("div");
+
+love.className="particle loveText";
+
+love.innerHTML="I LOVE YOU ❤️";
+
+love.style.left="50%";
+
+love.style.top="50%";
+
+love.style.transform="translate(-50%,-50%)";
+
+love.style.animationDuration="5s";
+
+
+document.body.appendChild(love);
+
+
+setTimeout(()=>{
+
+love.remove();
+
+},5000);
+
+
+}
+
 
 </script>
 
+
 </body>
+
 </html>

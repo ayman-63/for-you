@@ -6,10 +6,6 @@
 
 <title>For You</title>
 
-<meta property="og:title" content="For You">
-<meta property="og:description" content="">
-<meta name="twitter:card" content="summary">
-
 <style>
 *{
     margin:0;
@@ -45,20 +41,20 @@ body{
 }
 
 @keyframes heart{
-    50%{transform:scale(1.18);}
+    50%{
+        transform:scale(1.18);
+    }
 }
 
 h1{
     font-size:65px;
     margin:20px 0;
-    animation:fade 4s infinite;
     text-shadow:0 0 25px #ff9abb;
 }
 
 .text{
     font-size:22px;
     line-height:1.7;
-    animation:fade 6s infinite;
 }
 
 button{
@@ -77,31 +73,25 @@ button:hover{
     transform:scale(1.1);
 }
 
-@keyframes fade{
-    0%,100%{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    30%,70%{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
 .particle{
     position:absolute;
-    animation:move 8s linear infinite;
+    animation:move 6s linear forwards;
+    font-size:30px;
 }
 
 @keyframes move{
     from{
         transform:translateY(100vh) rotate(0);
+        opacity:1;
     }
     to{
         transform:translateY(-120vh) rotate(360deg);
+        opacity:0;
     }
 }
+
 </style>
+
 </head>
 
 <body>
@@ -113,16 +103,18 @@ button:hover{
 <h1>For You ❤️</h1>
 
 <div class="text">
-Sometimes one person can change everything.<br>
-A smile, a moment, a feeling...<br>
-and suddenly life becomes more beautiful. ❤️
+I tried to keep this feeling to myself...<br>
+but I couldn't anymore.<br>
+The truth is... I like you. ❤️
 </div>
 
-<button onclick="love()">Open My Heart </button>
+<button onclick="love()">Open My Heart 💖</button>
 
 </div>
+
 
 <script>
+
 function love(){
 
 for(let i=0;i<80;i++){
@@ -131,23 +123,33 @@ let p=document.createElement("div");
 
 p.className="particle";
 
-p.innerHTML=["❤️","💖","✨","💕"][Math.floor(Math.random()*4)];
+let items=[
+"❤️",
+"💖",
+"💕",
+"✨",
+"I Love You ❤️"
+];
+
+p.innerHTML=items[Math.floor(Math.random()*items.length)];
 
 p.style.left=Math.random()*100+"vw";
 
 p.style.fontSize=(20+Math.random()*35)+"px";
 
-p.style.animationDuration=(3+Math.random()*6)+"s";
+p.style.animationDuration=(3+Math.random()*5)+"s";
 
 document.body.appendChild(p);
 
+
 setTimeout(()=>{
 p.remove();
-},8000);
+},7000);
 
 }
 
 }
+
 </script>
 
 </body>

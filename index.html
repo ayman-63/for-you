@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>I Love You ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',Arial,sans-serif;
+}
+
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:
+    radial-gradient(circle at top,#ff4d88,#1a0010 60%);
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:500px;
+    text-align:center;
+    padding:40px 25px;
+    border-radius:30px;
+    background:rgba(255,255,255,.08);
+    backdrop-filter:blur(15px);
+    box-shadow:0 0 40px rgba(255,0,100,.4);
+}
+
+.heart{
+    font-size:110px;
+    animation:heart 1.3s infinite;
+}
+
+@keyframes heart{
+    50%{
+        transform:scale(1.18);
+    }
+}
+
+h1{
+    font-size:65px;
+    margin:20px 0;
+    animation:fade 4s infinite;
+    text-shadow:0 0 25px #ff9abb;
+}
+
+.text{
+    font-size:22px;
+    line-height:1.7;
+    animation:fade 6s infinite;
+}
+
+button{
+    margin-top:30px;
+    padding:15px 40px;
+    border:0;
+    border-radius:50px;
+    background:#ff2f68;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+    box-shadow:0 0 25px #ff2f68;
+}
+
+button:hover{
+    transform:scale(1.1);
+}
+
+@keyframes fade{
+    0%,100%{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    30%,70%{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+
+.particle{
+    position:absolute;
+    animation:move 8s linear infinite;
+}
+
+@keyframes move{
+    from{
+        transform:translateY(100vh) rotate(0);
+    }
+    to{
+        transform:translateY(-120vh) rotate(360deg);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<div class="container">
+
+<div class="heart">❤️</div>
+
+<h1>I Love You</h1>
+
+<div class="text">
+Sometimes one person can change everything.<br>
+A smile, a moment, a feeling...<br>
+and suddenly life becomes more beautiful. ❤️
+</div>
+
+<button onclick="love()">Open My Heart 💖</button>
+
+</div>
+
+
+<script>
+
+function love(){
+
+for(let i=0;i<80;i++){
+
+let p=document.createElement("div");
+
+p.className="particle";
+
+p.innerHTML=["❤️","💖","✨","💕"][Math.floor(Math.random()*4)];
+
+p.style.left=Math.random()*100+"vw";
+
+p.style.fontSize=(20+Math.random()*35)+"px";
+
+p.style.animationDuration=(3+Math.random()*6)+"s";
+
+document.body.appendChild(p);
+
+setTimeout(()=>{
+p.remove();
+},8000);
+
+}
+
+}
+
+</script>
+
+
+</body>
+</html>
